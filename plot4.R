@@ -25,14 +25,12 @@ par(mfrow=c(2,2))
 with(data,{
 plot(data$Datetime, data$Global_active_power, type="l", xlab="", ylab="Global Active Power")
 plot(data$Datetime, data$Voltage, type="l", xlab="datetime", ylab="Voltage")
-with(data, {
-  plot(Sub_metering_1~Datetime, type = "l", xlab="", ylab="Energy sub metering")
-  lines(Sub_metering_2~Datetime,col="red")
-  lines(Sub_metering_3~Datetime,col="blue")
-  legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
+plot(Sub_metering_1~Datetime, type = "l", xlab="", ylab="Energy sub metering")
+lines(Sub_metering_2~Datetime,col="red")
+lines(Sub_metering_3~Datetime,col="blue")
+legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
          legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
- })
 plot(data$Datetime, data$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
 })
 ##store the plot to a png file
